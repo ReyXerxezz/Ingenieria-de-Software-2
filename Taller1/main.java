@@ -147,3 +147,8 @@ public class main {
         return null;
     }
 }
+
+//Usuario: Mantiene la información básica del usuario. Esta clase sigue teniendo una única responsabilidad: manejar los datos del usuario.
+//EmailService: Esta clase se centra únicamente en el envío de correos electrónicos, lo que la hace responsable solo de esa funcionalidad.
+//PasswordValidator: Separa la lógica de seguridad y autenticación de la clase Usuario, permitiendo cambios en la validación de contraseñas sin afectar otras partes del sistema.
+//SalarioCalculator: Encapsula la lógica de cálculo de salarios, permitiendo que cualquier cambio en la forma de calcular el salario se haga en esta clase sin interferir con otras responsabilidades.

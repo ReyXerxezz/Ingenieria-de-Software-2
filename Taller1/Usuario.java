@@ -28,3 +28,11 @@ public class Usuario {
         return contrasena;
     }
 }
+
+//Violaciones del SRP
+//La clase Usuario tiene al menos cuatro responsabilidades distintas:
+//
+//Gestión de la información del usuario.
+//Comunicación por correo electrónico.
+//Seguridad y validación de contraseñas.
+//Cálculo financiero del salario.
