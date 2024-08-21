@@ -17,7 +17,7 @@ public class main {
             System.out.println("3. Salir");
             System.out.print("Elige una opción: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Consume the newline
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -48,10 +48,10 @@ public class main {
             System.out.print("Ingresa tu contraseña: ");
             contrasena = scanner.nextLine();
             System.out.print("Confirma tu contraseña: ");
-            String confirmacionContraseña = scanner.nextLine();
+            String confirmacionContrasena = scanner.nextLine();
 
-            if (contrasena.equals(confirmacionContraseña)) {
-                if (passwordValidator.validarContraseña(contrasena)) {
+            if (contrasena.equals(confirmacionContrasena)) {
+                if (passwordValidator.validarContrasena(contrasena)) {
                     System.out.println("Usuario creado exitosamente.");
                     break;
                 } else {

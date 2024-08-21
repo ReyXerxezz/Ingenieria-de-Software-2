@@ -1,5 +1,5 @@
 public class PasswordValidator {
-    public boolean validarContraseña(String contrasena) {
+    public boolean validarContrasena(String contrasena) {
 
         return contrasena.length() >= 8;
     }
