@@ -43,15 +43,15 @@ public class main {
         System.out.print("Ingresa tu correo electrónico: ");
         String email = scanner.nextLine();
 
-        String contraseña;
+        String contrasena;
         while (true) {
             System.out.print("Ingresa tu contraseña: ");
-            contraseña = scanner.nextLine();
+            contrasena = scanner.nextLine();
             System.out.print("Confirma tu contraseña: ");
             String confirmacionContraseña = scanner.nextLine();
 
-            if (contraseña.equals(confirmacionContraseña)) {
-                if (passwordValidator.validarContraseña(contraseña)) {
+            if (contrasena.equals(confirmacionContraseña)) {
+                if (passwordValidator.validarContraseña(contrasena)) {
                     System.out.println("Usuario creado exitosamente.");
                     break;
                 } else {
@@ -62,7 +62,7 @@ public class main {
             }
         }
 
-        Usuario usuario = new Usuario(nombre, apellido, email, contraseña);
+        Usuario usuario = new Usuario(nombre, apellido, email, contrasena);
         usuarios.add(usuario);
     }
 
@@ -70,7 +70,7 @@ public class main {
         System.out.print("Ingresa tu correo electrónico: ");
         String email = scanner.nextLine();
         System.out.print("Ingresa tu contraseña: ");
-        String contraseña = scanner.nextLine();
+        String contrasena = scanner.nextLine();
 
         Usuario usuario = buscarUsuarioPorEmail(email);
         if (usuario == null) {
@@ -78,7 +78,7 @@ public class main {
             return;
         }
 
-        if (passwordValidator.validarContraseña(contraseña)) {
+        if (passwordValidator.validarSesion(usuario, contrasena)) {
             System.out.println("Sesión iniciada exitosamente.");
             menuUsuario(scanner, usuario);
         } else {
@@ -94,7 +94,7 @@ public class main {
             System.out.println("3. Cerrar Sesión");
             System.out.print("Elige una opción: ");
             int opcion = scanner.nextInt();
-            scanner.nextLine();  // Consume the newline
+            scanner.nextLine();
 
             switch (opcion) {
                 case 1:
@@ -132,7 +132,7 @@ public class main {
         double horasTrabajadas = scanner.nextDouble();
         System.out.print("Ingresa la tarifa por hora: ");
         double tarifaPorHora = scanner.nextDouble();
-        scanner.nextLine();  // Consume the newline
+        scanner.nextLine();
 
         double salario = salarioCalculator.calcularSalario(horasTrabajadas, tarifaPorHora);
         System.out.println("El salario calculado es: $" + salario);

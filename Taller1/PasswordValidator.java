@@ -1,6 +1,10 @@
 public class PasswordValidator {
-    public boolean validarContraseña(String contraseña) {
-        // Lógica para validar contraseñas
-        return contraseña.length() >= 8;  // Ejemplo simple de validación
+    public boolean validarContraseña(String contrasena) {
+
+        return contrasena.length() >= 8;
+    }
+
+    public boolean validarSesion(Usuario usuario, String contrasena) {
+        return usuario.getContrasena().equals(contrasena);
     }
 }
