@@ -12,7 +12,7 @@ public class BillManager {
 
         System.out.println("Generating Bill Report from current month...");
         for (Bill bill : currentMonthBills) {
-            System.out.println(bill);
+            System.out.println(bill.billInfo());
         }
     }
 }

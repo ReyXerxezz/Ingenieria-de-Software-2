@@ -1,6 +1,7 @@
 public class EmailService {
-    public void sendEmailBill(Bill bill, Client client) {
-        System.out.println("Email send to client " + client.getName() + " with all the bill details: " + bill);
+    public void sendEmail(String email, Bill bill) {
+        System.out.println("Sending bill to " + email);
+        System.out.println(bill.billInfo());
     }
 
     public void sendBillDian(Bill bill) {

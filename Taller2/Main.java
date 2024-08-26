@@ -46,7 +46,7 @@ public class Main {
                     } else {
                         System.out.print("Type the total of your bill: ");
                         double total = scanner.nextDouble();
-                        Bill bill = new Bill(bills.size() + 1, total);
+                        Bill bill = new Bill((bills.size() + 1), total, client);
                         bills.add(bill);
                         System.out.println("Your bill was successfully made.\n");
                     }
@@ -60,7 +60,7 @@ public class Main {
                         System.out.println("You need a client first.\n");
                     } else {
                         for (Bill bill : bills) {
-                            emailService.sendEmailBill(bill, client);
+                            emailService.sendEmail(client.getEmail(), bill);
                             emailService.sendBillDian(bill);
                         }
                             System.out.println("All the bills were successfully send.\n");

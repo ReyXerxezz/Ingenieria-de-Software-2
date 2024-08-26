@@ -1,0 +1,7 @@
+Las clase Facturas definida actualmente viola la política de responsabilidad individual (SRP) porque tiene múltiples responsabilidades que deben separarse en diferentes clases. 
+Según SRP, cuando las clases tienen una única responsabilidad o motivo de modificación, es más fácil mantener y mejorar el código. 
+Aquí explicaré cuáles son las muchas responsabilidades de la clase Factura y cómo repetirlas. 
+Identificar violaciones de SRP Métodos de control de la base de datos (saveInvoice y saveCustomer): estos métodos significan que la clase Invoice es responsable de interactuar con la base de datos. Esta es una responsabilidad diferente a la simple presentación y gestión de la lógica de las facturas. 
+Métodos de envío de correo electrónico (sendEmailInvoice y sendInvoiceDian): estos métodos hacen que la clase sea responsable de las comunicaciones por correo electrónico, y la responsabilidad es diferente. 
+Proceso de generación de informes (generarReporteFacturas): La elaboración de informes es una función con diferentes responsabilidades, ya que no está relacionada con la creación y gestión de la factura en sí.
+
