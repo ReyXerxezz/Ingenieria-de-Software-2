@@ -1,0 +1,3 @@
+El principio de Open/Closed (OCP) está siendo infringido ya que la clase envío requiere ser modificada cada vez que se añade un nuevo tipo de envío.
+El Principio Abierto/Cerrado establece que las clases deben estar abiertas para la extensión, pero cerradas para la modificación.
+Infracción al principio OCP: Si se decide incluir un nuevo método de envío, como por ejemplo un envío internacional, se debería realizar una modificación en la función calcularCosto dentro de la clase Envío, lo cual estaría yendo en contra del principio OCP.
