@@ -1,11 +1,10 @@
 public class PaquetePeligroso extends Paquete implements IPaquetePeligroso {
     private Boolean etiquetaPeligroso;
     private Boolean embalajeEspecial;
-    private double costoExtra = 100000;
 
-    public PaquetePeligroso(double peso, double altura, double base, Boolean peligroso) {
+    public PaquetePeligroso(double peso, double altura, double base, Boolean etiquetaPeligroso) {
         super(peso, altura, base);
-        this.etiquetaPeligroso = peligroso;
+        this.etiquetaPeligroso = etiquetaPeligroso;
     }
 
     public Boolean getEtiquetaPeligroso() {
@@ -15,10 +14,8 @@ public class PaquetePeligroso extends Paquete implements IPaquetePeligroso {
     @Override
     public Boolean verificarContenidoPeligroso() {
         if(getEtiquetaPeligroso()){
-            System.out.println("Embalaje peligroso ");
             return true;
         } else {
-            System.out.println("Embalaje no peligroso ");
             return false;
         }
     }
@@ -26,24 +23,12 @@ public class PaquetePeligroso extends Paquete implements IPaquetePeligroso {
     @Override
     public void asegurarContenidoPeligroso() {
         if(verificarContenidoPeligroso()){
-            System.out.println("Costo extra de "+ getCostoExtra());
+            System.out.println("Embalaje peligroso ");
             setEmbalajeEspecial(true);
         } else {
-            System.out.println("Sin costo extra ");
+            System.out.println("Embalaje no peligroso ");
+            setEmbalajeEspecial(false);
         }
-    }
-
-    @Override
-    public double calcularCostoEnvioPeligroso() {
-        if(getEmbalajeEspecial()){
-            return (((getAltura() * getBase()) + getPeso()) * 50) + getCostoExtra();
-        } else {
-            return ((getAltura() * getBase()) + getPeso()) * 50;
-        }
-    }
-
-    public double getCostoExtra() {
-        return costoExtra;
     }
 
     public Boolean getEmbalajeEspecial() {
