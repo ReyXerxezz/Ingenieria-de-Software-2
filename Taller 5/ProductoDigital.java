@@ -1,7 +1,7 @@
 public class ProductoDigital extends Producto {
-    private int tamanoArchivo;
+    private double tamanoArchivo;
 
-    public ProductoDigital(int tamanoArchivo, String nombre, int cantidad, double precio){
+    public ProductoDigital(String nombre, double precio, int cantidad, double tamanoArchivo){
         super(nombre, cantidad, precio);
         this.tamanoArchivo = tamanoArchivo;
 
@@ -9,6 +9,6 @@ public class ProductoDigital extends Producto {
 
     @Override
     public double calcularCosto() {
-        return 0;
+        return getPrecio() * getCantidad();
     }
 }

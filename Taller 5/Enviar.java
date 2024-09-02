@@ -1,4 +1,3 @@
-public interface Enviar {
-
-    
+interface Enviar {
+    void enviarPorCorreo();
 }
