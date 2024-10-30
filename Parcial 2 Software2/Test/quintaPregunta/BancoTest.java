@@ -13,7 +13,6 @@ public class BancoTest {
 
     @BeforeAll
     public static void setUp() {
-        // Initialize the bank with a list of accounts
         List<Cuenta> cuentas = new ArrayList<>();
         cuentas.add(new Cuenta("Alice", "12345", 1000.0));
         cuentas.add(new Cuenta("Bob", "67890", 2000.0));
@@ -47,7 +46,7 @@ public class BancoTest {
     @Test
     public void depositarTestFallido() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            banco.depositar("00000", 500.0); // Non-existent account
+            banco.depositar("00000", 500.0);
         });
         assertEquals("No existe el numero de Cuenta", exception.getMessage());
     }
@@ -55,7 +54,7 @@ public class BancoTest {
     @Test
     public void retirarTestFallido() {
         Exception exception = assertThrows(IllegalArgumentException.class, () -> {
-            banco.retirar("54321", 2000.0); // Should fail due to insufficient balance
+            banco.retirar("54321", 2000.0);
         });
         assertEquals("Fondos insuficientes", exception.getMessage());
     }
