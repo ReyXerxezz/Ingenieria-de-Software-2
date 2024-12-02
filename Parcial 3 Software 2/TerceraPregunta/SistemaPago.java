@@ -1,6 +1,8 @@
 package TerceraPregunta;
 
 public interface SistemaPago {
-    String getNombre();
-    String getCorreo();
+    void iniciarSesion();
+    void validarCorreo();
+    void validarAutorizacion();
+    void realizarPago();
 }

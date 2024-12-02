@@ -1,25 +1,31 @@
 package TerceraPregunta;
 
-public class AdaptadorSistemaPago {
+public class AdaptadorSistemaPago implements SistemaPago {
+    private NuevoSistemaPagoOperacion nuevoSistemaPagoOperacion;
     private NuevoSistemaPago nuevoSistemaPago;
 
-    public AdaptadorSistemaPago(NuevoSistemaPago nuevoSistemaPago) {
+    public AdaptadorSistemaPago(NuevoSistemaPagoOperacion nuevoSistemaPagoOperacion, NuevoSistemaPago nuevoSistemaPago) {
+        this.nuevoSistemaPagoOperacion = nuevoSistemaPagoOperacion;
         this.nuevoSistemaPago = nuevoSistemaPago;
     }
 
-    public void crearSesion(NuevoSistemaPagoOperacion sistemaPagoOperacion) {
-        sistemaPagoOperacion.crearSesion(nuevoSistemaPago);
+    @Override
+    public void iniciarSesion() {
+        nuevoSistemaPagoOperacion.crearSesion(nuevoSistemaPago);
     }
 
-    public void validarCorreo(NuevoSistemaPagoOperacion sistemaPagoOperacion) {
-        sistemaPagoOperacion.validarCorreo(nuevoSistemaPago);
+    @Override
+    public void validarCorreo() {
+        nuevoSistemaPagoOperacion.validarCorreo(nuevoSistemaPago);
     }
 
-    public void validarAutorizacion(NuevoSistemaPagoOperacion sistemaPagoOperacion) {
-        sistemaPagoOperacion.validarAutorizacion();
+    @Override
+    public void validarAutorizacion() {
+        nuevoSistemaPagoOperacion.validarAutorizacion();
     }
 
-    public void realizarPago(NuevoSistemaPagoOperacion sistemaPagoOperacion) {
-        sistemaPagoOperacion.realizarPago();
+    @Override
+    public void realizarPago() {
+        nuevoSistemaPagoOperacion.realizarPago();
     }
 }
